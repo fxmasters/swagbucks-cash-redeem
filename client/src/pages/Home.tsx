@@ -38,23 +38,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 py-4 safe-area-inset-top">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+          <div className="w-8 h-8 bg-white rounded flex items-center justify-center flex-shrink-0">
             <span className="text-lg font-bold text-teal-700">◆</span>
           </div>
-          <span className="text-white font-bold text-lg">swagbucks</span>
+          <span className="text-white font-bold text-lg hidden sm:inline">swagbucks</span>
         </div>
         <Button
           variant="outline"
-          className="border-white text-white hover:bg-white/10"
+          className="border-white text-white hover:bg-white/10 touch-none active:opacity-80 min-h-10 min-w-10"
         >
           Log In
         </Button>
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen bg-gradient-to-br from-teal-800 via-teal-700 to-blue-900 overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-br from-teal-800 via-teal-700 to-blue-900 overflow-hidden pt-20 sm:pt-0">
         {/* Background pattern overlay */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -62,10 +62,10 @@ export default function Home() {
         </div>
 
         {/* Content Container */}
-        <div className="relative h-full flex items-center justify-between px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="relative min-h-screen flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 md:px-12 max-w-7xl mx-auto w-full py-8 sm:py-0 gap-6 sm:gap-0">
           {/* Left Side - Hero Text and Counter */}
-          <div className="flex-1 text-white z-10 max-w-md">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
+          <div className="flex-1 text-white z-10 w-full sm:max-w-md">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 sm:mb-8">
               Save Money.
               <br />
               Make Money.
@@ -88,16 +88,16 @@ export default function Home() {
           </div>
 
           {/* Right Side - Signup Form Card */}
-          <div className="flex-1 z-10 flex justify-end max-w-md">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="flex-1 z-10 flex justify-center sm:justify-end w-full sm:max-w-md">
+            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 w-full max-w-sm">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Join for free!
               </h2>
 
               {/* Terms Checkbox */}
-              <div className="flex items-start gap-3 mb-6">
-                <Checkbox id="terms" className="mt-1" />
-                <label htmlFor="terms" className="text-xs text-gray-600">
+              <div className="flex items-start gap-3 mb-4 sm:mb-6">
+                <Checkbox id="terms" className="mt-1 touch-none" />
+                <label htmlFor="terms" className="text-xs text-gray-600 leading-relaxed">
                   I agree to the{" "}
                   <a href="#" className="text-blue-600 hover:underline">
                     Terms of Use
@@ -113,7 +113,7 @@ export default function Home() {
 
               {/* Google Button */}
               <Button
-                className="w-full mb-3 bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2"
+                className="w-full mb-3 bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 active:bg-gray-100 flex items-center justify-center gap-2 touch-none min-h-12 text-sm sm:text-base"
                 variant="outline"
               >
                 <svg
@@ -131,7 +131,7 @@ export default function Home() {
 
               {/* Apple Button */}
               <Button
-                className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 flex items-center justify-center gap-2"
+                className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-700 flex items-center justify-center gap-2 touch-none min-h-12 text-sm sm:text-base"
                 variant="default"
               >
                 <Apple className="w-5 h-5" />
@@ -149,7 +149,7 @@ export default function Home() {
 
               {/* Email Button */}
               <Button
-                className="w-full bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2"
+                className="w-full bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 active:bg-gray-100 flex items-center justify-center gap-2 touch-none min-h-12 text-sm sm:text-base"
                 variant="outline"
               >
                 <Mail className="w-5 h-5" />
@@ -157,9 +157,9 @@ export default function Home() {
               </Button>
 
               {/* Login Link */}
-              <p className="text-center text-sm text-gray-600 mt-6">
-                Already have an account?{" "}
-                <a href="#" className="text-blue-600 hover:underline font-medium">
+              <p className="text-center text-xs sm:text-sm text-gray-600 mt-4 sm:mt-6">
+                Already have an account?
+                <a href="#" className="text-blue-600 hover:underline font-medium touch-none">
                   Log In
                 </a>
               </p>
@@ -183,20 +183,20 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-6 md:px-12 bg-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
             How it Works
           </h2>
 
-          <p className="text-center text-gray-600 text-lg leading-relaxed">
+          <p className="text-center text-gray-600 text-base sm:text-lg leading-relaxed px-2">
             After signing up, tell us about yourself to get personalized offers.
             Redeem gift cards to your favorite retailers like Amazon and Walmart
             or get cash back from PayPal.
           </p>
 
           {/* Divider */}
-          <div className="mt-12 border-t border-gray-200"></div>
+          <div className="mt-8 sm:mt-12 border-t border-gray-200"></div>
         </div>
       </section>
     </div>
